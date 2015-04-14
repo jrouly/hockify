@@ -4,12 +4,17 @@ from bs4 import BeautifulSoup
 import requests, time, csv, sys
 
 # verify the correct number of command line arguments
-if len(sys.argv) != 2:
+if len(sys.argv) > 2:
     print("Usage: hockify <url>")
     sys.exit()
 
+# read nhl url from cli or just default
+try:
+    url = sys.argv[1]
+except IndexError:
+    url = "http://www.nhl.com/ice/schedulebyseason.htm"
+
 # generate beautiful soup from nhl html
-url  = sys.argv[1]
 page = requests.get(url)
 soup = BeautifulSoup(page.text)
 
