@@ -1,2 +1,3 @@
 # hockify
-generate a google calendar importable CSV from the NHL playoffs schedule
+
+Generate a Google Calendar importable CSV from the NHL playoffs schedule.
