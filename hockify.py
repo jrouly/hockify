@@ -1,9 +1,14 @@
 # hockify
 
 from bs4 import BeautifulSoup
-import requests, time, csv
+import requests, time, csv, sys
 
-page = requests.get("http://www.nhl.com/ice/schedulebyseason.htm")
+if len(sys.argv) != 2:
+    print("Usage: hockify <url>")
+    sys.exit()
+
+url  = sys.argv[1]
+page = requests.get(url)
 soup = BeautifulSoup(page.text)
 
 schedule_tbl = soup.find(class_="data schedTbl")
