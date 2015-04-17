@@ -56,7 +56,7 @@ headers = [
 ]
 
 # dictionary cleaning lambda functions
-subject = lambda entry: entry['visiting_team'] + " vs " + entry['home_team']
+subject = lambda entry: entry['visiting_team'] + " at " + entry['home_team']
 start_date = lambda entry: entry['date']
 start_time = lambda entry: "7:00 PM ET" if "TBD" in entry['time'] else entry['time']
 end_date = start_date
